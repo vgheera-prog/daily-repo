@@ -1,0 +1,809 @@
+/**
+ * DailyMate - Tool Specific Stylesheets
+ * Controls, Workspaces, Previews, Charts & Tables
+ */
+
+/* ==========================================
+   GENERIC TOOL LAYOUT & WORKSPACE
+========================================== */
+.tool-view {
+    padding: 30px 0 60px;
+    animation: fadeIn 0.25s ease;
+}
+
+.tool-header {
+    margin-bottom: 24px;
+}
+
+.tool-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+.tool-breadcrumbs a {
+    color: var(--text-muted);
+}
+.tool-breadcrumbs a:hover {
+    color: var(--brand-primary);
+}
+.tool-breadcrumbs span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.tool-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.tool-title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.tool-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+/* 2-Column Tool Workspace */
+.tool-workspace-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.tool-workspace-grid.equal-cols {
+    grid-template-columns: 1fr 1fr;
+}
+
+.tool-panel {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+}
+
+.tool-panel-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sticky-panel {
+    position: sticky;
+    top: 90px;
+}
+
+/* Form Controls & Inputs */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px var(--brand-primary-light);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.input-slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.form-range {
+    flex: 1;
+    accent-color: var(--brand-primary);
+    cursor: pointer;
+}
+
+.range-val-badge {
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    font-size: 0.825rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    min-width: 58px;
+    text-align: center;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Drag & Drop File Zone */
+.dropzone-box {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-lg);
+    background: var(--bg-surface-alt);
+    padding: 40px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropzone-box:hover,
+.dropzone-box.drag-active {
+    border-color: var(--brand-primary);
+    background: var(--brand-primary-light);
+}
+
+.dropzone-box.compact {
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.dropzone-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.dropzone-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.dropzone-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================
+   1. QR CODE GENERATOR SPECIFICS
+========================================== */
+.qr-type-tabs {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+}
+
+.qr-type-btn {
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.qr-type-btn:hover {
+    color: var(--brand-primary);
+}
+.qr-type-btn.active {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: #ffffff;
+}
+
+.color-picker-pair {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.color-input-bubble {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    background: none;
+    padding: 0;
+}
+.color-input-bubble::-webkit-color-swatch-wrapper { padding: 0; }
+.color-input-bubble::-webkit-color-swatch { border: none; border-radius: var(--radius-md); }
+
+.qr-render-box {
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.qr-render-box canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+}
+
+.qr-payload-box {
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 8px 12px;
+    font-size: 0.775rem;
+    font-family: monospace;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 20px;
+}
+
+.qr-action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.qr-action-buttons .btn-full {
+    grid-column: span 2;
+}
+
+/* ==========================================
+   2. IMAGE COMPRESSOR & FILTERS
+========================================== */
+.compress-preview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.image-preview-card {
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.image-preview-frame {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: repeating-conic-gradient(#80808020 0% 25%, transparent 0% 50%) 50% / 16px 16px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.image-preview-frame img,
+.image-preview-frame canvas {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.image-preview-meta {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.scale-presets {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.scale-preset-btn {
+    flex: 1;
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 4px 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+.scale-preset-btn:hover {
+    background: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Filter Studio Controls */
+.filter-transforms-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.filter-transforms-row .btn {
+    flex: 1;
+}
+
+/* ==========================================
+   3. IMAGES TO PDF TOOL
+========================================== */
+.pdf-pages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+    max-height: 480px;
+    overflow-y: auto;
+    padding: 4px;
+}
+
+.pdf-page-card {
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-page-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: var(--radius-sm);
+    z-index: 2;
+}
+
+.pdf-page-thumb-wrapper {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-surface);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.pdf-page-thumb {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.pdf-page-meta {
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 8px;
+}
+
+.pdf-page-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+}
+
+.pdf-page-dim {
+    color: var(--text-muted);
+}
+
+.pdf-page-actions {
+    display: flex;
+    gap: 4px;
+    justify-content: flex-end;
+}
+.pdf-page-actions .btn-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+}
+
+/* ==========================================
+   4. BUDGET PLANNER & 50/30/20
+========================================== */
+.budget-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.metric-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.metric-label {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.metric-val {
+    font-size: 1.85rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.metric-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+}
+
+/* 50/30/20 Rule Analyzer Box */
+.rule-analyzer-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
+}
+
+.rule-bars-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 20px 0;
+}
+
+.rule-bar-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.progress-track {
+    height: 12px;
+    background: var(--bg-surface-alt);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width 0.4s ease;
+}
+
+.progress-fill.fill-needs { background: var(--accent-sky); }
+.progress-fill.fill-wants { background: #ec4899; }
+.progress-fill.fill-savings { background: var(--accent-emerald); }
+
+/* SVG Donut & Bar Charts */
+.charts-split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.chart-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.donut-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 10px 0;
+}
+
+.donut-svg {
+    width: 170px;
+    height: 170px;
+    transform: rotate(0deg);
+}
+
+.donut-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 180px;
+    overflow-y: auto;
+    font-size: 0.825rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.legend-color-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+.legend-label {
+    flex: 1;
+    color: var(--text-secondary);
+}
+.legend-val {
+    font-weight: 700;
+}
+
+/* Vertical Bar Chart */
+.bar-chart-container {
+    height: 180px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding-top: 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 60px;
+}
+
+.bar-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    width: 38px;
+}
+
+.bar-fill {
+    width: 100%;
+    border-radius: 6px 6px 0 0;
+    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    cursor: pointer;
+}
+
+.bar-fill:hover .bar-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bar-tooltip {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: var(--text-primary);
+    color: var(--bg-main);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    pointer-events: none;
+    opacity: 0;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.bar-income { background: var(--accent-emerald); }
+.bar-expense { background: var(--accent-rose); }
+.bar-savings { background: var(--brand-primary); }
+
+.bar-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+/* Transaction Table */
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+    font-weight: 700;
+    color: var(--text-muted);
+    background: var(--bg-surface-alt);
+    font-size: 0.775rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.category-pill {
+    padding-left: 8px;
+    font-weight: 600;
+}
+
+/* ==========================================
+   5. CALCULATORS SPECIFICS
+========================================== */
+.calc-result-card {
+    background: linear-gradient(135deg, var(--brand-primary-light) 0%, var(--bg-surface) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.calc-big-number {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--brand-primary);
+    line-height: 1.1;
+    margin: 8px 0;
+}
+
+.calc-breakdown-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.calc-breakdown-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+/* Tip Splitter Cards */
+.tip-person-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.tip-person-box {
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+}
+
+.tip-person-number {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--accent-emerald);
+}
+
+/* BMI Gauge */
+.bmi-gauge-track {
+    height: 16px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(90deg, #38bdf8 0%, #4ade80 25%, #facc15 50%, #f87171 75%, #ef4444 100%);
+    position: relative;
+    margin: 28px 0 16px;
+}
+
+.bmi-pointer {
+    position: absolute;
+    top: -8px;
+    width: 4px;
+    height: 32px;
+    background: #000000;
+    border: 2px solid #ffffff;
+    box-shadow: var(--shadow-md);
+    transform: translateX(-50%);
+    transition: left 0.3s ease;
+}
+
+/* Password Strength Bar */
+.strength-bar-track {
+    height: 8px;
+    background: var(--bg-surface-alt);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin: 12px 0 6px;
+}
+
+.strength-bar-fill {
+    height: 100%;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.strength-weak { background: var(--accent-rose); }
+.strength-fair { background: var(--accent-amber); }
+.strength-strong { background: var(--accent-sky); }
+.strength-ultra { background: var(--accent-emerald); }
